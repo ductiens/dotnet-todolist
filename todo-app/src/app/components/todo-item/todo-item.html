@@ -1,0 +1,16 @@
+<div class="todo-item-container" [class.completed]="todo.isDone">
+  <div class="toggle-icon" (click)="onToggle()">
+    <span *ngIf="!todo.isDone">⚪️</span>
+    <span *ngIf="todo.isDone">🟢</span>
+  </div>
+
+  <div class="todo-title">
+    <p [ngClass]="{'line-through': todo.isDone}">
+      {{ todo.title }}
+    </p>
+  </div>
+
+  <div class="delete-icon" (click)="onRemove()">
+    <span>❌</span>
+  </div>
+</div>

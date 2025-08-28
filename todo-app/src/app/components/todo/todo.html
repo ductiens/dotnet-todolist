@@ -1,0 +1,24 @@
+<div class="todo-container">
+  <div class="header">
+    <h1>📝 To-Do List</h1>
+  </div>
+
+  <div class="add-form">
+    <input
+      type="text"
+      placeholder="Bạn cần làm gì?"
+      [(ngModel)]="newTodoTitle"
+      (keyup.enter)="addTodo()"
+    />
+    <button (click)="addTodo()">Thêm +</button>
+  </div>
+
+  <div class="task-list">
+    <app-todo-item
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      (toggle)="toggleTodo(todo)"
+      (remove)="removeTodo(todo.id)">
+    </app-todo-item>
+  </div>
+</div>
